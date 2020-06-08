@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start",
     "export": "npm run build && next export"
   },
   "dependencies": {

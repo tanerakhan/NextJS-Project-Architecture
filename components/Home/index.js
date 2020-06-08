@@ -1,14 +1,12 @@
-import React, {Fragment, Component} from 'react'
+import React from 'react'
 import Link from 'next/link'
-export default class index extends Component {
-    render() {
+export default function Home() {
         return (
-            <Fragment>
+            <React.Fragment>
                 <div>Hello NextJS</div>
                 <Link prefetch href="/about">
                     <a>right redux Data</a>
                 </Link>
-            </Fragment>
+            </React.Fragment>
         )
-    }
 }

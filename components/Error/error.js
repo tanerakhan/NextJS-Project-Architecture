@@ -10,8 +10,8 @@ class Error extends React.Component {
     return (
       <p>
         {this.props.statusCode
-          ? `An error ${this.props.statusCode} occurred on server`
-          : 'Burası 404 sayfası dostum :/'}
+          ? `${this.props.statusCode} | Server Hatası`
+          : '404 Hatası! Sayfa Bulunamadı'}
       </p>
     )
   }

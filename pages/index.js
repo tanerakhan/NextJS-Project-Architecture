@@ -1,16 +1,16 @@
 import React, {Component, Fragment} from 'react'
 import Layout from '../components/layout'
-import Head from '../components/Head/index'
+import Head from '../components/Head'
 import Load from '../components/LoadContent'
 import dynamic from 'next/dynamic';
 const Home = dynamic(
-    () => import('../components/Home/index'),
+    () => import('../components/Home'),
     {
       loading: () => <Load/>,
       ssr: true,
     }
   )
-class Index extends Component {
+class App extends Component {
     render() {
         return (
             <Fragment>
@@ -22,4 +22,4 @@ class Index extends Component {
         )
     }
 }
-export default Index
+export default App

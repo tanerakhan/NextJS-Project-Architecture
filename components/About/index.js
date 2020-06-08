@@ -1,16 +1,13 @@
-import React, {Fragment, Component} from 'react'
+import React from 'react'
 import Link from 'next/link'
-export default class index extends Component {
-    render() {
-        return (
-            <Fragment>
-                <div>
-                    About Page
-                </div>
-                <Link href="/">
-                    <a>Home Page</a>
-                </Link>
-            </Fragment>
-        )
-    }
+
+export default function About() {
+    return (
+        <div>
+            <h1>About Page</h1>
+            <Link href="/">
+                <a>About page</a>
+            </Link>
+        </div>
+    )
 }

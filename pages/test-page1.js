@@ -1,15 +1,15 @@
 import React, {Fragment} from 'react'
 import Head from '../components/Head/index'
-import AllClub from '../components/AllClub/index'
+import Test1 from '../components/Test1'
 import Layout from '../components/layout'
-function AllClubs() {
+function TestPage1() {
     return (
         <Fragment>
             <Head title="Tüm Kulüpler"/>
             <Layout>
-                <AllClub/>
+                <Test1/>
             </Layout>
         </Fragment>
     )
 }
-export default AllClubs
+export default TestPage1

@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Link from 'next/link'
 import {HeaderContainer, HeaderTopContainer, HeaderBottomContainer} from './main.style'
-export default class Index extends Component {
-    render() {
+export default function Header() {
         return (
             <HeaderContainer>
                 <HeaderTopContainer>
@@ -30,18 +29,17 @@ export default class Index extends Component {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/tum-etkinlikler">
-                                <a>tüm etkinlikler</a>
+                            <Link href="/test-page1">
+                                <a>test 1</a>
                             </Link>
                         </li>
                         <li>
-                            <Link href="/tum-kulupler">
-                                <a>tüm kulüpler</a>
+                            <Link href="/test-page2">
+                                <a>test 2</a>
                             </Link>
                         </li>
                     </ul>
                 </HeaderBottomContainer>
             </HeaderContainer>
         )
-    }
 }
