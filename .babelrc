@@ -1,0 +1,21 @@
+{
+    "presets": ["next/babel"],
+    "env": {
+      "development": {
+        "plugins": [
+          ["styled-components", {
+            "displayName": true,
+            "ssr": true
+          }]
+        ]
+      },
+      "production": {
+        "plugins": [
+          ["styled-components", {
+            "displayName": false,
+            "ssr": true
+          }]
+        ]
+      }
+    }
+  }
