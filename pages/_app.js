@@ -1,37 +1,30 @@
-import React from "react";
-import App from "next/app";
-import { Provider } from "react-redux";
-//import withRedux from "next-redux-wrapper";
-//import { makeStore } from "../store";
+import React, { useEffect } from 'react'
+import App from 'next/app'
+import { Provider } from 'react-redux'
 import { useStore } from '../store/store'
+import { useRouter } from 'next/router'
 
-/* class DktPlatformApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    const pageProps = Component.getInitialProps
-      ? await Component.getInitialProps(ctx)
-      : {};
+export default function DktPlatformApp({ Component, pageProps }) {
+    const router = useRouter()
+    useEffect(() => {
+        const handleRouteChangeError = (err, url) => {
+            if (err.cancelled) {
+                console.log(`Route to ${url} was cancelled!`)
+            }
+        }
 
-    return { pageProps };
-  }
-  render() {
-    const { Component, pageProps, store } = this.props;
+        router.events.on('routeChangeError', handleRouteChangeError)
+
+        return () => {
+            router.events.off('routeChangeError', handleRouteChangeError)
+        }
+    }, [])
+
+    const store = useStore(pageProps.initialReduxState)
 
     return (
         <Provider store={store}>
-          <Component {...pageProps} />
+            <Component {...pageProps} />
         </Provider>
-    );
-  }
-} */
-
-export default function DktPlatformApp({ Component, pageProps }) {
-  const store = useStore(pageProps.initialReduxState);
-
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
+    )
 }
-
-//export default withRedux(makeStore)(DktPlatformApp);

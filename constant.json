@@ -1,0 +1,65 @@
+{
+    "headerMenu": [
+        {
+            "name": "Anasayfa",
+            "url": "/",
+            "target": "_self"
+        },
+        {
+            "name": "Test1",
+            "url": "/test-page1",
+            "target": "_self"
+        },
+        {
+            "name": "Test2",
+            "url": "/test-page2",
+            "target": "_self"
+        },
+        {
+            "name": "Account",
+            "url": "/account",
+            "target": "_self"
+        }
+    ],
+    "accountTabs": [
+        {
+            "name": "Profilim",
+            "url": "profilim",
+            "target": "_self"
+        },
+        {
+            "name": "Siparişlerim",
+            "url": "siparislerim",
+            "target": "_self"
+        },
+        {
+            "name": "CarrefourSA Kart",
+            "url": "carrefoursa-kart",
+            "target": "_self"
+        },
+        {
+            "name": "Adreslerim",
+            "url": "adreslerim",
+            "target": "_self"
+        },
+        {
+            "name": "Alışveriş Listem",
+            "url": "alisveris-listem",
+            "target": "_self"
+        },
+        {
+            "name": "Kredi Kartlarım",
+            "url": "kredi-kartlarim",
+            "target": "_self"
+        },
+        {
+            "name": "Numara Değiştir",
+            "url": "numara-degistir",
+            "target": "_self"
+        },
+        {
+            "name": "Çıkış",
+            "url": "alisveris-listem"
+        }
+    ]
+}
