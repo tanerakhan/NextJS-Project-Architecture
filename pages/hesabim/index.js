@@ -9,23 +9,24 @@ import { accountTabs } from '../../constant.json'
 
 const AccountPage = ({ router }) => {
     const { pathname } = router
+    console.log('pathname => ', pathname)
     return (
         <React.Fragment>
-            <Head title="Account Page" />
+            <Head title="Hesabım" />
             <Layout checkHeader={false} checkFooter={false}>
                 <Account>
                     {accountTabs.map(({ name, url = pathname, target }, i) => (
                         <li key={i}>
                             <Link
-                                href="/account/[profile]"
-                                as={`/account/${url}`}
+                                href={`/hesabim/${url}`}
+                                //href="/hesabim/[profile]"
+                                //as={`/hesabim/${url}`}
                                 target={target}
                             >
                                 <a>{name}</a>
                             </Link>
                         </li>
                     ))}
-                    <li></li>
                 </Account>
             </Layout>
         </React.Fragment>
