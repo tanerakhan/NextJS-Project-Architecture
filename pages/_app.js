@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import App from 'next/app'
 import { Provider } from 'react-redux'
 import { useStore } from '../store/store'
 import { useRouter } from 'next/router'
