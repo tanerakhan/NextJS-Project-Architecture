@@ -27,12 +27,12 @@ export default function UseDialog({
             <DialogActions>
                 <Button
                     autoFocus
-                    click={closeModal}
+                    click={() => (closeModal = true)}
                     type="primary"
                     text="Kapat"
                 />
                 <Button
-                    click={closeModal}
+                    click={() => (closeModal = true)}
                     type="primary"
                     autoFocus
                     text="Tamam"

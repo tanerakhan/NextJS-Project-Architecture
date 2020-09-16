@@ -1,18 +1,9 @@
 {
+    "globalColorBlue": "#085fae",
     "headerMenu": [
         {
             "name": "Anasayfa",
             "url": "/",
-            "target": "_self"
-        },
-        {
-            "name": "Test1",
-            "url": "/test-page1",
-            "target": "_self"
-        },
-        {
-            "name": "Test2",
-            "url": "/test-page2",
             "target": "_self"
         },
         {
@@ -43,6 +34,11 @@
             "target": "_self"
         },
         {
+            "name": "Profilimi Güncelle",
+            "url": "profil-guncelle",
+            "target": "_self"
+        },
+        {
             "name": "Alışveriş Listem",
             "url": "alisveris-listem",
             "target": "_self"
@@ -60,6 +56,16 @@
         {
             "name": "Çıkış",
             "url": "alisveris-listem"
+        }
+    ],
+    "profileRedirects": [
+        {
+            "text": "telefon güncelle",
+            "url": "numara-degistir"
+        },
+        {
+            "text": "bilgi güncelle",
+            "url": "profil-guncelle"
         }
     ]
 }

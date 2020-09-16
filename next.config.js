@@ -1,8 +1,6 @@
 const isProd = process.env.NODE_ENV === 'production'
 
 // Enable importing of css stylesheets
-const withSass = require('@zeit/next-sass')
-const withImages = require('next-images')
 const withPlugins = require('next-compose-plugins')
 const withPWA = require('next-pwa')
 
@@ -25,22 +23,20 @@ const getBasePath = () => {
 
 module.exports = withPlugins(
     [],
-    withImages(
-        withSass({
-            assetPrefix: getBasePath(),
-            publicRuntimeConfig: {
-                basePath: getBasePath(),
-            },
-            experimental: { scss: true },
-            devIndicators: {
-                autoPrerender: false,
-            },
-            cssModules: true,
-            cssLoaderOptions: {
-                importLoaders: 1,
-                localIdentName: '[local]',
-            },
-        })
-    ),
+    {
+        assetPrefix: getBasePath(),
+        publicRuntimeConfig: {
+            basePath: getBasePath(),
+        },
+        experimental: { scss: true },
+        devIndicators: {
+            autoPrerender: false,
+        },
+        cssModules: true,
+        cssLoaderOptions: {
+            importLoaders: 1,
+            localIdentName: '[local]',
+        },
+    },
     withPWA(getBasePath)
 )

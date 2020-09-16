@@ -1,5 +1,4 @@
 import React from 'react'
-import css from '../static/styles/reset.scss'
 import Load from '../components/LoadContent'
 import dynamic from 'next/dynamic'
 
@@ -14,9 +13,9 @@ const Footer = dynamic(() => import('./Footer'), {
 
 const Layout = ({ children, checkHeader = true, checkFooter = true }) => {
     return (
-        <div className="app" className={css.appRoot}>
+        <div className="app">
             {!checkHeader ? '' : <Header />}
-            <section className={css.rootSection}>{children}</section>
+            <section className="rootSection">{children}</section>
             {!checkFooter ? '' : <Footer />}
         </div>
     )

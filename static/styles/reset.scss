@@ -28,9 +28,9 @@ html {
     margin: $zero;
     padding: $zero;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size:14px;
+    font-size: 1rem;
 }
-.appRoot {
+.app {
     width: $full;
     height: $full;
     display: $flex;
@@ -48,4 +48,21 @@ a {
     display: block;
     text-decoration: $none;
     color:#000;
+}
+.companyColorButton{
+    display: flex;
+    justify-content: center;
+    button{
+        background-color: #085fae;
+        color: #fff;
+            &:hover{
+                background-color:#1b78cc;
+                opacity: .9;
+            }
+    }
+}
+.formGroup {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
 }

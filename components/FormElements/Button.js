@@ -16,11 +16,12 @@ export default function ContainedButtons({
     text,
     click,
     autoFocus,
+    classButton,
     ...props
 }) {
     const classes = useStyles()
     return (
-        <div className={classes.root}>
+        <div className={classButton}>
             <Button
                 {...props}
                 autoFocus={autoFocus}

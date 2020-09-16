@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Provider } from 'react-redux'
 import { useStore } from '../store/store'
 import { useRouter } from 'next/router'
+import '../static/styles/reset.scss'
 
 export default function DktPlatformApp({ Component, pageProps }) {
     const router = useRouter()
