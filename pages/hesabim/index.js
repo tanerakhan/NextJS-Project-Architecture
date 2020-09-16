@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { withRouter } from 'next/router'
 
-import Head from '../../components/Head'
-import Layout from '../../components/layout'
-import Account from '../../components/Account'
+import Head from 'components/Head'
+import Layout from 'components/layout'
+import Account from 'components/Account'
 
-import { accountTabs } from '../../constant.json'
+import { accountTabs } from 'constant.json'
 
 const AccountPage = ({ router }) => {
     const { pathname } = router

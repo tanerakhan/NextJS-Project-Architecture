@@ -8,19 +8,30 @@ import CountDown from 'components/CountDown'
 import Modal from 'components/Modal'
 
 export default function NewCSACard() {
-    const countDownTime = 15
+    const countDownTime = 5
     const router = useRouter()
+    const [isActive, setIsActive] = useState(false)
     const [number, setNumber] = useState(null)
     const [otpNumber, setOtpNumber] = useState(null)
     const [isNumberValid, setNumberValid] = useState(false)
     const [counter, setCounter] = useState(countDownTime)
-    const [openModal, setOpenModal] = React.useState(false)
+    const [openModal, setOpenModal] = useState(false)
+    const [reSent, setResent] = useState(false)
 
     useEffect(() => {
-        const timer =
-            counter > 0 && setInterval(() => setCounter(counter - 1), 1000)
+        let timer = null
+        console.log('isActive => ', isActive)
+        if (isActive) {
+            timer =
+                counter > 0 && setInterval(() => setCounter(counter - 1), 1000)
+            if (counter === 0) {
+                setResent(true)
+            }
+        } else if (!isActive && counter !== 0) {
+            clearInterval(timer)
+        }
         return () => clearInterval(timer)
-    }, [counter])
+    }, [isActive, counter])
 
     const handleOpen = () => {
         openModal(true)
@@ -34,26 +45,43 @@ export default function NewCSACard() {
         setNumber(e.target.value)
     }
 
-    const handleNumberOut = (e) => {
-        if (number.length > 10) {
+    const handleNumberOut = () => {
+        if (number && number.length > 10) {
+            console.log('tıklandı')
             setNumberValid(true)
             setNumber(null)
+            setIsActive(!isActive)
         }
     }
 
     const handleOTP = (e) => {
         setOtpNumber(e.target.value)
-        if (counter === 0 && otpNumber === '') {
-            setOpenModal(true)
-        } else {
+        if (counter === 0) {
+            setIsActive(!isActive)
+        }
+        if (e.target.value !== '') {
             setOpenModal(true)
         }
+    }
+
+    const reSentOTP = () => {
+        setCounter(countDownTime)
+        setResent(false)
+        setIsActive(true)
     }
 
     return (
         <React.Fragment>
             <Head title="Yeni CarrefourSA Kart Tanımla" />
             <Layout checkHeader={false} checkFooter={false}>
+                {
+                    <Modal
+                        openModal={openModal}
+                        closeModal={handleClose}
+                        title="test"
+                        description="test"
+                    />
+                }
                 <Button
                     type="default"
                     text="geri dön"
@@ -96,11 +124,20 @@ export default function NewCSACard() {
                                 value={number || ''}
                             />
                         </div>
-                        <Button
-                            text="sms'i onaylayın"
-                            classButton="companyColorButton"
-                            click={(e) => handleOTP(e)}
-                        />
+
+                        {reSent ? (
+                            <Button
+                                text="tekrar gönder"
+                                classButton="companyColorButton"
+                                click={(e) => reSentOTP()}
+                            />
+                        ) : (
+                            <Button
+                                text="sms'i onaylayın"
+                                classButton="companyColorButton"
+                                click={(e) => handleOTP(e)}
+                            />
+                        )}
                     </form>
                 )}
             </Layout>
