@@ -16,7 +16,7 @@
     "devcert": "^1.0.0",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "next": "^8.1.0",
     "next-images": "^1.1.2",
     "next-redux-saga": "^4.0.2",
